@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Comida</th>
+        </tr>
+        
+    </table>
+</body>
+<script>
+//declaro meu objeto de pessoas
+let persons = [
+    {
+      nome: 'Lucas',
+      idade: 20,
+      comida: 'Chocolate'
+    },
+    {
+      nome: 'José',
+      idade: 50
+    },
+    {
+      nome: 'Lourdes',
+      idade:100,
+      comida: 'Pizza'
+    }
+    ]
+    
+    //seleciono a tabela
+    let table = document.querySelector('table');
+    
+    //formato cada pessoa para colocar na tabela
+    table.innerHTML += 
+      `${persons.map(person => `
+        <tr>
+          <td>${person.nome}</td>
+          <td>${person.idade}</td>
+          <td>${(person.comida) ? person.comida : 'Tá de dieta'}</td>
+        </tr>
+      `).join('')}
+        `
+    
+
+</script>
+</html>
